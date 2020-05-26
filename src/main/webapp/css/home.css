@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    align-items: center;
+}
+
+.p-header {
+    color: blanchedalmond;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 100%;
+    height: 545px;
+    background-image: url(./images/still-items-things-books.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+#books {
+    position: relative;
+    top: 50px;
+    box-sizing: border-box;
+    padding-left: 80px;
+    width: 300px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+#books > input {
+    width: auto;
+    height: 30px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+#books > input:focus {
+    outline:0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#create-book {
+    position: relative;
+    left: 380px;
+    top: 25px;
+}
+
+#create-book > input{
+    width: 300px;
+    height: 30px;
+    text-align: center;
+}
+
+#create-book-button {
+    width: 150px;
+}
+
+#opend-book {
+    float: left;
+    box-sizing: border-box;
+    margin-top: 40px;
+    margin-left: 10px;
+    padding: 0 0 0 70px;
+    width: 1020px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#opend-book > div {
+    display: grid;
+    grid-template-columns: 150px 350px 250px 120px;
+}
+
+#opend-book > div > div {
+    margin-top: 10px;
+    height: 150px;
+    background-color: whitesmoke;
+    border-bottom-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#opend-book > div > div > div {
+    display: grid;
+    grid-template-columns: 20% 2% 68%;
+    justify-content: space-evenly;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.readonly {
+    pointer-events: none;
+    width: 100%;
+    height: 20px;
+    border: 0;
+    background-color: transparent;
+}
+
+.writable {
+    width: 100%;
+    height: 20px;
+    border: 1px solid grey;
+    border-radius: 25px;
+    text-align: center;
+    background-color: transparent;
+    outline: none;
+}
+
+.disabled-button {
+    display: none;
+}
+
+#save-button {
+    width: 90%;
+    height: 30px;
+    text-align: center;
+}
+
+#edit-button {
+    width: 90%;
+    height: 30px;
+}
+
+#delete-button {
+    width: 90%;
+    height: 30px;
+    text-align: center;
+}
+
+

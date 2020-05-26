@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    align-items: center;
+}
+
+.p-header {
+    color: blanchedalmond;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;    
+}
+
+main {
+    width: 100%;
+    height: 500px;
+    background-image: url(./images/still-items-things-books.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* pointer-events: none;  */
+}
+
+#login-feld {
+    box-sizing: border-box;
+    position: relative;
+    top: 100px;
+    left: 200px;
+    padding: 30x 0 0 50px;
+    /* border: 2px groove grey; */
+    width: 400px;
+    height: 300px;
+}
+
+.input-field {
+    width: 300px;
+    height: 40px;
+}
+
+.submit-button {
+    margin-left: 100px;
+    width: 100px;
+    height: 40px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+input {
+    margin-top: 15px;
+    border: 2px solid grey;
+    border-radius: 25px;
+    text-align: center;
+    background-color: transparent;
+    outline: none;
+}
+
+input:hover {
+    border-color: black;
+}
+
+#sign-up-button {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+#sign-up-field {
+    box-sizing: border-box;
+    position: relative;
+    top: 100px;
+    width: 400px;
+    height: 300px;
+    border: 2px solid gray;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    padding-left:50px;
+}
+
+#sign-up-field > span {
+    position: relative;
+    left: 80px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+#sign-up-page {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 15%;
+    left: 35%;
+}
+
+.close-icon {
+    position: relative;
+    left: 90%;
+    top: 0;
+    cursor: pointer;
+}
