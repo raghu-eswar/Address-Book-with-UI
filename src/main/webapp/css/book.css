@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    align-items: center;
+}
+
+.p-header {
+    color: blanchedalmond;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#log-out-button {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+main {
+    width: 100%;
+    height: 540px;
+    background-image: url(./images/still-items-things-books.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    padding: 30px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    column-gap: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#book-content {
+    box-sizing: border-box;
+    border: 2px solid gray;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+#person-info {
+    box-sizing: border-box;
+    border: 2px solid gray;
+    border-radius: 20px;
+    background-color: rgba(245, 245, 245, 0.6);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 8fr;
+    grid-template-areas: ". person-options" "person-image person-data";
+}
+
+#person-options {
+    grid-area: person-options;
+    height: 50px;
+    background-color: transparent;
+}
+
+#person-options > a {
+    color: black;
+    margin-left: 30px;
+    font-size: 25px;
+    outline: none;
+    cursor: pointer;
+}
+
+#person-options > form >button:active {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#person-image {
+    grid-area: person-image;
+    height: 200px;
+    background-image: url(./images/person.png);
+    background-size: 100% 100%;
+}
+
+#person-data {
+    grid-area: person-data;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 20px;
+}
+
+td {
+    padding: 15px;
+}
+
+#search {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#search-field {
+    width: 340px;
+    height: 30px;
+    padding: 0;
+    background-color: transparent;
+    border: 2px groove gray;
+    border-radius: 25px;
+    outline: none;
+    text-align: center;
+}
+
+#search-button {
+    outline: none;
+    padding: 0;
+    width: 35px;
+    height: 30px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    margin-left: -10px;
+    margin-right: 20px;
+    background-color: transparent;
+}
+
+.person {
+    height: 40px;
+    background-color: rgba(245, 222, 179, 0.4);
+    outline: none;
+    cursor: pointer;
+    border: 0;
+}
+
+.person:active {
+    background-color: transparent;
+}
+
+.person > div {
+    border: 0;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(2, 210px);
+    align-items: center;
+    text-align: left;
+    font-size: 15px;
+}
+
+#book-name {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    align-items: center;
+    justify-items: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#book-name > a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+#book-name > a:active {
+    color: red;
+}
+
+#book-name > span {
+    height: 40px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+
+.close-icon {
+    position: relative;
+    left: 90%;
+    top: 0;
+    cursor: pointer;
+}
+
+input {
+    margin-top: 15px;
+    border: 2px solid grey;
+    border-radius: 25px;
+    text-align: center;
+    background-color: transparent;
+    outline: none;
+}
+
+input:hover {
+    border-color: black;
+}
+
+.input-field {
+    width: 300px;
+    height: 40px;
+}
+
+.submit-button {
+    margin-left: 100px;
+    width: 100px;
+    height: 40px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#new-person-data {
+    box-sizing: border-box;
+    position: relative;
+    top: 0px;
+    width: 400px;
+    height: 500px;
+    border: 2px solid gray;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    padding-left:50px;
+}
+
+#new-person-data > span {
+    position: relative;
+    left: 80px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+#add-person {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 15%;
+    left: 35%;
+}
+
+
+
+
+
+
+
+

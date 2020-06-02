@@ -1,4 +1,3 @@
-com\addressBook\servlets\ShowAddressBook.class
 com\addressBook\servlets\DeleteRecord.class
 com\addressBook\servlets\User.class
 com\addressBook\jsonData\AddressBookException.class
@@ -12,9 +11,12 @@ com\addressBook\servlets\Login.class
 com\addressBook\jsonData\AddressDTO.class
 com\addressBook\filesSystem\FileManagerFactory.class
 com\addressBook\servlets\AddNewRecord.class
+com\addressBook\servlets\OpenAddressBook.class
 com\addressBook\servlets\EditPersonInfo.class
 com\addressBook\jsonData\AddressBookException$ExceptionType.class
 com\addressBook\servlets\UsersInfo.class
 com\addressBook\filesSystem\JsonFileManager.class
+com\addressBook\servlets\ShowPersonInfo.class
+com\addressBook\servlets\DeleteBook.class
 com\addressBook\jsonData\AddressBook.class
 com\addressBook\jsonData\PersonInfo.class

@@ -32,7 +32,7 @@
     </main>
     <div id="sign-up-page">
         <form id="sign-up-field" action="SignUp" method="post">
-            <input type="button" value="&times;" class="close-icon" onclick="hideSignUpPage()">
+            <input type="button" value="&times;" class="close-icon" onclick="hidePopupPage(event)">
             <span>Sign Up</span>
             <input type="text" placeholder="Enter username" name="userName"  class="input-field" required></br>
             <input type="password" placeholder="Enter Password" name="password"  class="input-field" required> </br>

@@ -2,7 +2,6 @@ package com.addressBook.servlets;
 
 import com.addressBook.jsonData.AddressBookController;
 import com.addressBook.jsonData.AddressBookException;
-import com.addressBook.jsonData.AddressDTO;
 import com.addressBook.jsonData.PersonDTO;
 
 import javax.servlet.RequestDispatcher;
@@ -15,25 +14,22 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/jsp/DeleteRecord")
-public class DeleteRecord extends HttpServlet {
+@WebServlet("/jsp/ShowPersonInfo")
+public class ShowPersonInfo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String phoneNo = req.getParameter("phoneNo");
-        System.out.println("inside delet record.......");
+       String phoneNo = req.getParameter("phoneNo");
         HttpSession session = req.getSession();
-        String bookName = (String) session.getAttribute("addressBookName");
-        PersonDTO personDetails = (PersonDTO) session.getAttribute("personOpened");
-        AddressBookController bookController = new AddressBookController();
+        AddressBookController controller = new AddressBookController();
+        String addressBookName = (String) session.getAttribute("addressBookName");
         try {
-            bookController.loadAddressBook(bookName);
-        } catch (AddressBookException ignored) { ignored.printStackTrace();   }
-        bookController.delete(bookName, personDetails.phoneNumber);
-        bookController.save(bookName);
-        session.setAttribute("addressBook", bookController.displayBook(bookName));
-        session.setAttribute("personOpened", null);
+            controller.loadAddressBook(addressBookName);
+        } catch (AddressBookException ignored) {     }
+        PersonDTO personDetails = controller.getPersonDetails(addressBookName, phoneNo);
+        session.setAttribute("personOpened", personDetails);
         ServletContext servletContext = this.getServletContext();
         RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/jsp/book.jsp");
         dispatcher.forward(req,resp);
+
     }
 }

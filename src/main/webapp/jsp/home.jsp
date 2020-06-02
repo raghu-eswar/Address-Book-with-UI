@@ -1,7 +1,6 @@
 <%@ page import="com.addressBook.servlets.User" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.addressBook.jsonData.PersonDTO" %>
-<%@ page import="com.addressBook.jsonData.AddressDTO" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,72 +15,38 @@
         <div>
             <p class="p-header">WELCOME TO ADDRESS BOOK</p>
         </div>
-        <div></div>
+         <div>
+            <button id="log-out-button" onclick="logOut()"><p class="p-header">log out</p></button>
+        </div>
     </header>
     <main>
 
-        <form id="create-book" action="CreateNewBook">
-            <input type="text" placeholder="enter book name" name="newBookName" required>
-            <input type="submit" id="create-book-button" value="create new book" >
-        </form>
-
-        <form id="books" action="ShowAddressBook">
         <% User user = (User) session.getAttribute("user");
            for (String bookName : user.addressBookNames) { %>
-               <input type="submit" name="bookName" value=<%=bookName%>>
+            <div class="address-book">
+               <form action="OpenAddressBook">
+                   <button type="submit" value=<%= bookName %> name="bookName" class="book"> </button>
+               </form>
+               <div class="image-tag-name"><%= bookName.toUpperCase() %></div>
+           </div>
          <% } %>
 
-        </form>
-        <div style="float: left;height: 500px; overflow-y: auto;overflow-x: hidden;">
-        <%if (session.getAttribute("addressBookName") != null ) {%>
-           <div><form id="opend-book">
-             <div>
-             <div><img src="<%=request.getContextPath()%>/css/images/person-icon-person-icon-clipart-image-from-our-icon-clipart-category--9.png" alt="no image"></div>
-                 <div>
-                     <div><div>First name</div><div>:</div><div><input type="text" class="writable" name="firstName"  placeholder="First Name"></div></div>
-                     <div><div>Last name</div><div>:</div><div><input type="text" class="writable" name="lastName" placeholder="Lst Name"></div></div>
-                     <div><div>Phone no.</div><div>:</div><div><input type="text" class="writable" name="phoneNo" placeholder="Phone number"></div></div>
-                 </div>
-                 <div>
-                     <div><div>city</div><div>:</div><div><input type="text" class="writable" name="city" placeholder="City"></div></div>
-                     <div><div>state</div><div>:</div><div><input type="text" class="writable" name="state" placeholder="State"></div></div>
-                     <div><div>zip</div><div>:</div><div><input type="text" class="writable" name="zip"  placeholder="Zip"></div></div>
-                 </div>
-                 <div>
-                     <button id="edit-button" onclick="form.action='AddNewRecord'">Add</button>
-                 </div>
-             </div>
-           </form></div>
-       <%}%>
-        <%  List<PersonDTO> addressBook = (List<PersonDTO>) session.getAttribute("addressBook");
-          if (addressBook != null && addressBook.size() != 0) {
-            for (PersonDTO person : addressBook) { %>
-                <div><form id="opend-book">
-                    <div>
-                       <div><img src="<%=request.getContextPath()%>/css/images/person-icon-person-icon-clipart-image-from-our-icon-clipart-category--9.png" alt="no image"></div>
-                        <div>
-                            <div><div>First name</div><div>:</div><div><input class="readonly" type="text" name="firstName" value=<%=person.firstName%>></div></div>
-                            <div><div>Last name</div><div>:</div><div><input class="readonly" type="text" name="lastName" value=<%=person.lastName%>></div></div>
-                            <div><div>Phone no.</div><div>:</div><div><input class="readonly" type="text" name="phoneNo" value=<%=person.phoneNumber%>></div></div>
-                        </div>
-                        <div>
-                            <div><div>city</div><div>:</div><div><input class="readonly" type="text" name="city" value=<%=person.address.city%>></div></div>
-                            <div><div>state</div><div>:</div><div><input class="readonly" type="text" name="state" value=<%=person.address.state%>></div></div>
-                            <div><div>zip</div><div>:</div><div><input class="readonly" type="text" name="zip" value=<%=person.address.zip%>></div></div>
-                        </div>
-                        <div>
-                            <button id="edit-button" onclick="enableToEdit(event); event.preventDefault(); ">edit</button>
-                            <button id="save-button" class="disabled-button" onclick="form.action='EditPersonInfo'">save</button>
-                            <button id="delete-button" onclick="form.action='DeleteRecord'">delete</button>
-                        </div>
-                    </div>
-                </form></div>
-          <%}
-          }%>
-       </div>
+        <div class="address-book">
+            <div class="add-book-options" onclick="showCreateBookForm()"></div>
+            <div class="image-tag-name">Create New Book</div>
+        </div>
     </main>
     <footer>
 
     </footer>
+    <div id="create-book">
+        <form id="new-book-data" action="CreateNewBook">
+            <input type="button" value="&times;" class="close-icon" onclick="hidePopupPage(event)">
+            <span>create book</span>
+            <input type="text" placeholder="Enter book name" name="newBookName"  class="input-field" required></br>
+            <input type="submit" class="submit-button" value="create">
+        </form>
+     </div>
+
 </body>
 </html>

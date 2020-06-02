@@ -20,7 +20,7 @@ public class Login extends HttpServlet {
                 user[0] = user1;
         });
         if(user[0] == null){
-            resp.getWriter().println("<html><body onload=\"alert('Hello World')\"></body></html>");
+//            resp.getWriter().println("<html><body onload=\"alert('Hello World')\"></body></html>");
             resp.sendRedirect("/AddressBook");
         }
         HttpSession session = req.getSession();

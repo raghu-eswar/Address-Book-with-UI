@@ -35,7 +35,7 @@ public class CreateNewBook extends HttpServlet {
                 session.setAttribute("user", user);
             }
 
-        } catch (AddressBookException e) {   }
+        } catch (AddressBookException ignored) {   }
         ServletContext servletContext = this.getServletContext();
         RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/jsp/home.jsp");
         dispatcher.forward(req,resp);

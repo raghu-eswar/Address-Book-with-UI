@@ -29,87 +29,77 @@ a {
     text-decoration: none;
 }
 
-main {
-    width: 100%;
-    height: 545px;
-    background-image: url(./images/still-items-things-books.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    overflow: hidden;
-}
-
-#books {
-    position: relative;
-    top: 50px;
-    box-sizing: border-box;
-    padding-left: 80px;
-    width: 300px;
-    height: 540px;
-    display: flex;
-    flex-direction: column;
-    float: left;
-}
-
-#books > input {
-    width: auto;
-    height: 30px;
-    border: 1px solid transparent;
+#log-out-button {
+    background-color: transparent;
+    border: 0;
+    outline: none;
     cursor: pointer;
 }
 
-#books > input:focus {
-    outline:0;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-#create-book {
-    position: relative;
-    left: 380px;
-    top: 25px;
-}
-
-#create-book > input{
-    width: 300px;
-    height: 30px;
-    text-align: center;
-}
-
-#create-book-button {
-    width: 150px;
-}
-
-#opend-book {
-    float: left;
+main {
+    width: 100%;
+    height: 540px;
+    background-image: url(./images/still-items-things-books.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     box-sizing: border-box;
-    margin-top: 40px;
-    margin-left: 10px;
-    padding: 0 0 0 70px;
-    width: 1020px;
+    padding: 40px 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    column-gap: 20px;
+    row-gap: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.address-book {
+    box-sizing: border-box;
+    width: 200px;
+    height: 230px;
+    border: 2px solid gray;
+    border-radius: 25px;
     background-color: transparent;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
 }
 
-#opend-book > div {
-    display: grid;
-    grid-template-columns: 150px 350px 250px 120px;
-}
-
-#opend-book > div > div {
-    margin-top: 10px;
+.book {
+    width: 150px;
     height: 150px;
-    background-color: whitesmoke;
-    border-bottom-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    border: 1px solid transparent;
+    background-image: url(./images/img_944.png);
+    background-size: 100% 100%;
+    align-items: center;
+    cursor: pointer;
 }
 
-#opend-book > div > div > div {
-    display: grid;
-    grid-template-columns: 20% 2% 68%;
-    justify-content: space-evenly;
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.image-tag-name {
+    position: relative;
+    color: black;
+    top: -5%;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.add-book-options {
+    width: 150px;
+    height: 150px;
+    border: 1px solid transparent;
+    background-image: url(./images/jee-09-512.png);
+    background-size: 100% 100%;
+    text-align: center;
+    cursor: pointer
+
 }
 
 ::-webkit-scrollbar {
@@ -125,48 +115,62 @@ main {
     background: rgba(0, 0, 0, 0.4);
 }
 
-img {
-    width: 100%;
-    height: 100%;
+#new-book-data {
+    box-sizing: border-box;
+    position: relative;
+    top: 100px;
+    width: 400px;
+    height: 200px;
+    border: 2px solid gray;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    padding-left:50px;
 }
 
-.readonly {
-    pointer-events: none;
-    width: 100%;
-    height: 20px;
-    border: 0;
-    background-color: transparent;
+#new-book-data > span {
+    position: relative;
+    left: 80px;
+    font-weight: 600;
+    font-size: 22px;
 }
 
-.writable {
-    width: 100%;
-    height: 20px;
-    border: 1px solid grey;
+#create-book {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 15%;
+    left: 35%;
+}
+
+.close-icon {
+    position: relative;
+    left: 90%;
+    top: 0;
+    cursor: pointer;
+}
+
+input {
+    margin-top: 15px;
+    border: 2px solid grey;
     border-radius: 25px;
     text-align: center;
     background-color: transparent;
     outline: none;
 }
 
-.disabled-button {
-    display: none;
+input:hover {
+    border-color: black;
 }
 
-#save-button {
-    width: 90%;
-    height: 30px;
-    text-align: center;
+.input-field {
+    width: 300px;
+    height: 40px;
 }
 
-#edit-button {
-    width: 90%;
-    height: 30px;
+.submit-button {
+    margin-left: 100px;
+    width: 100px;
+    height: 40px;
+    font-weight: 600;
+    cursor: pointer;
 }
-
-#delete-button {
-    width: 90%;
-    height: 30px;
-    text-align: center;
-}
-
-
